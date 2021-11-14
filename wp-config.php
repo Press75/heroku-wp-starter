@@ -23,6 +23,10 @@ if ( ! getenv( 'DATABASE_URL' ) ) {
 	die('No DATABASE_URL DSN');
 }
 
+function p75_isSSL(): bool {
+	return ! empty( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] !== 'off';
+}
+
 $DSN = parse_url( getenv( 'DATABASE_URL' ) );
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
@@ -48,13 +52,17 @@ define('NONCE_SALT',       'v?Diw~pU_F1gG2NoLNd++mYjK7W-1(.8QX>R+WW{hk$fhF]]lYES
 $table_prefix = 'wp_';
 
 // Config
+define( 'WP_CONTENT_DIR', __DIR__ . '/wp-content' );
+define( 'WP_CONTENT_URL', ( p75_isSSL() ? 'https' : 'http' ) . '://' . $_SERVER['HTTP_HOST'] . '/wp-content' );
+define( 'ABSPATH', __DIR__ . '/wp/' );
+
+// Debug
 define( 'WP_DEBUG', false );
+define( 'WP_DEBUG_LOG', false );
+define( 'WP_DEBUG_DISPLAY', false );
+define( 'SAVEQUERIES', false );
+define( 'SCRIPT_DEBUG', false );
 
 /* Load WP */
-/** Absolute path to the WordPress directory. */
-if ( ! defined( 'ABSPATH' ) ) {
-	define( 'ABSPATH', __DIR__ . '/' );
-}
-
-/** Sets up WordPress vars and included files. */
+// Bootstrap WordPress
 require_once ABSPATH . 'wp-settings.php';
