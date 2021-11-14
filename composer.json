@@ -34,7 +34,7 @@
   "require": {
     "php": "^7.4",
     "humanmade/s3-uploads": "2.2.1",
-    "johnpbloch/wordpress-core": "5.8.1",
+    "johnpbloch/wordpress-core": "5.8.2",
     "johnpbloch/wordpress-core-installer": "2.0.*",
     "monolog/monolog": "1.23.0",
     "vlucas/phpdotenv": "^5.3",
