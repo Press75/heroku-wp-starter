@@ -56,6 +56,12 @@ define( 'WP_CONTENT_DIR', __DIR__ . '/wp-content' );
 define( 'WP_CONTENT_URL', ( p75_isSSL() ? 'https' : 'http' ) . '://' . $_SERVER['HTTP_HOST'] . '/wp-content' );
 define( 'ABSPATH', __DIR__ . '/wp/' );
 
+// S3 Compatible Bucket
+define( 'S3_UPLOADS_BUCKET', getenv( 'S3_UPLOADS_BUCKET' ) );
+define( 'S3_UPLOADS_KEY', getenv( 'S3_UPLOADS_KEY' ) );
+define( 'S3_UPLOADS_SECRET', getenv( 'S3_UPLOADS_SECRET' ) );
+define( 'S3_UPLOADS_REGION', getenv( 'S3_UPLOADS_REGION' ) );
+
 // Debug
 define( 'WP_DEBUG', false );
 define( 'WP_DEBUG_LOG', false );
