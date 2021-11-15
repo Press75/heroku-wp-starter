@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1339bf2fd302accda4ba37cda347d598",
+    "content-hash": "34f47bf150949f2881cc6589b473f8ee",
     "packages": [
         {
             "name": "composer/installers",
@@ -279,7 +279,7 @@
         },
         {
             "name": "humanmade/s3-uploads",
-            "version": "3.0.3",
+            "version": "2.3.0",
             "dist": {
                 "type": "zip",
                 "url": "https://github.com/humanmade/S3-Uploads/releases/download/{%VERSION}/manual-install.zip"
