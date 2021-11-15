@@ -1,32 +1,16 @@
 <?php
-/**
- * The base configuration for WordPress
- *
- * The wp-config.php creation script uses this file during the installation.
- * You don't have to use the web site, you can copy this file to "wp-config.php"
- * and fill in the values.
- *
- * This file contains the following configurations:
- *
- * * MySQL settings
- * * Secret keys
- * * Database table prefix
- * * ABSPATH
- *
- * @link https://wordpress.org/support/article/editing-wp-config-php/
- *
- * @package WordPress
- */
 
 // Load DB from DSN URL
 if ( ! getenv( 'DATABASE_URL' ) ) {
 	die('No DATABASE_URL DSN');
 }
 
+// SSL detection
 function p75_isSSL(): bool {
 	return ! empty( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] !== 'off';
 }
 
+// SSL Support
 if ( $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https' ) {
 	$_SERVER['HTTPS']       = 'on';
 	$_SERVER['SERVER_PORT'] = 443;
