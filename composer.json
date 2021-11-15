@@ -29,26 +29,10 @@
     {
       "type": "vcs",
       "url": "git@github.com:moderntribe/coding-standards.git"
-    },
-    {
-      "type": "package",
-      "package": {
-        "name": "humanmade/s3-uploads",
-        "version": "2.3.0",
-        "type": "wordpress-plugin",
-        "dist": {
-          "type": "zip",
-          "url": "https://github.com/humanmade/S3-Uploads/releases/download/{%VERSION}/manual-install.zip"
-        },
-        "require": {
-          "ffraenz/private-composer-installer": "^5.0"
-        }
-      }
     }
   ],
   "require": {
     "php": "^7.4",
-    "humanmade/s3-uploads": "2.3.0",
     "johnpbloch/wordpress-core": "5.8.2",
     "johnpbloch/wordpress-core-installer": "2.0.*",
     "monolog/monolog": "1.23.0",
@@ -60,6 +44,7 @@
     "wpackagist-plugin/regenerate-thumbnails": "3.1.5",
     "wpackagist-plugin/user-switching": "1.5.8",
     "wpackagist-plugin/wordpress-seo": "17.5",
+    "wpackagist-plugin/amazon-s3-and-cloudfront": "2.5.5",
     "ext-memcached": "*",
     "ext-redis": "*",
     "ext-imagick": "*",
@@ -75,8 +60,7 @@
       "wp-content/mu-plugins/{$name}": [ "type:wordpress-muplugin"],
       "wp-content/plugins/{$name}":[
         "type:wordpress-plugin"
-      ],
-      "wp-content/plugins/s3-uploads": [ "humanmade/S3-Uploads" ]
+      ]
     }
   }
 }
