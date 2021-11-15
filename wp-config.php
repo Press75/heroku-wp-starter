@@ -75,6 +75,12 @@ define( 'WP_DEBUG_DISPLAY', false );
 define( 'SAVEQUERIES', false );
 define( 'SCRIPT_DEBUG', false );
 
+// Security
+define( 'DISALLOW_FILE_EDIT', true );
+define( 'DISALLOW_FILE_MODS', true );
+define( 'FORCE_SSL_LOGIN', true );
+define( 'FORCE_SSL_ADMIN', true );
+
 // Easy URL override for duplicating environments
 if( getenv( 'WP_URL' ) ) {
 	define( 'WP_HOME', getenv( 'WP_URL' ) );
