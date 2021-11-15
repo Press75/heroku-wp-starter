@@ -70,6 +70,10 @@ define( 'WP_DEBUG_DISPLAY', false );
 define( 'SAVEQUERIES', false );
 define( 'SCRIPT_DEBUG', false );
 
+// Force server domain match
+define( 'WP_HOME', ( p75_isSSL() ? 'https' : 'http' ) . '://' . $_SERVER['HTTP_HOST'] );
+define( 'WP_SITEURL', ( p75_isSSL() ? 'https' : 'http' ) . '://' . $_SERVER['HTTP_HOST'] );
+
 /* Load WP */
 // Bootstrap WordPress
 require_once ABSPATH . 'wp-settings.php';
