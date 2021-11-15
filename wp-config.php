@@ -27,6 +27,11 @@ function p75_isSSL(): bool {
 	return ! empty( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] !== 'off';
 }
 
+if ( $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https' ) {
+	$_SERVER['HTTPS']       = 'on';
+	$_SERVER['SERVER_PORT'] = 443;
+}
+
 $DSN = parse_url( getenv( 'DATABASE_URL' ) );
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
